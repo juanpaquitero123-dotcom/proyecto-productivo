@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store">
+
+    <title>GalerÃ­as por PÃ¡gina | Panel Admin â€” InstituciÃ³n Educativa San FÃ©lix</title>
+    <link rel="stylesheet" href="../css/style.css?v=3">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/admin.css?v=8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" href="../Img/f2c2af08-c170-47f2-a55f-2767abb5ea0b.png">
+
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body data-pagina="paginas">
+
+    <!--==================== ENCABEZADO ====================-->
+    <header>
+
+        <div class="top-bar">
+            <div class="contacto">
+                <span>
+                    <i class="fa-solid fa-phone"></i>
+                    324 434 61 91
+                </span>
+                <span>
+                    <i class="fa-solid fa-envelope"></i>
+                    iesanfelixaldia@gmail.com
+                </span>
+            </div>
+            <div class="redes">
+                <a href="https://www.facebook.com/share/1BzNG8ZxmF/" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com/@INSTITUCIONEDUCATIVASANFELIX" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="header-principal">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="../Img/f2c2af08-c170-47f2-a55f-2767abb5ea0b.png" alt="I.E SAN FÃ‰LIX">
+                </a>
+                <div class="texto-logo">
+                    <h1>
+                        InstituciÃ³n Educativa
+                        <span>SAN FÃ‰LIX</span>
+                    </h1>
+                    <p>Formamos para el futuro</p>
+                </div>
+            </div>
+            <div class="buscador">
+                <form>
+                    <input type="search" placeholder="Buscar...">
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <i class="fa-solid fa-house"></i>
+                        Inicio
+                    </a>
+                </li>
+                <li>
+                    <a href="nosotros.html">
+                        Nuestro Colegio
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="academico.html">
+                        AcadÃ©mico
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="estudiantes.html">
+                        Estudiantes
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="padres.html">
+                        Padres
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="horarios.html">
+                        <i class="fa-regular fa-clock"></i>
+                        Horarios
+                    </a>
+                </li>
+
+                <li>
+                    <a href="eventos.html">
+                        <i class="fa-regular fa-calendar"></i>
+                        Eventos
+                    </a>
+                </li>
+                <li>
+                    <a href="noticias.html">
+                        <i class="fa-regular fa-newspaper"></i>
+                        Noticias
+                    </a>
+                </li>
+                <li>
+                    <a href="contacto.html">
+                        <i class="fa-solid fa-phone"></i>
+                        Contacto
+                    </a>
+                </li>
+                <li class="activo">
+                    <a href="login.html">
+                        <i class="fa-solid fa-user-shield"></i>
+                        Admin
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!--==================== CONTENIDO ADMIN ====================-->
+    <main class="admin-layout">
+
+        <!-- Sidebar de navegaciÃ³n del panel -->
+        <aside class="admin-sidebar" id="adminSidebar"></aside>
+
+        <div class="admin-contenido">
+
+            <!-- Banner Admin -->
+            <section class="eventos-banner" id="banner-admin">
+                <div class="banner-fondo"></div>
+                <div class="banner-glow"></div>
+                <div class="banner-particulas">
+                    <span class="particula p1"></span>
+                    <span class="particula p2"></span>
+                    <span class="particula p3"></span>
+                    <span class="particula p4"></span>
+                    <span class="particula p5"></span>
+                    <span class="particula p6"></span>
+                    <span class="particula p7"></span>
+                    <span class="particula p8"></span>
+                </div>
+                <div class="banner-decor decor-a">
+                    <i class="fa-solid fa-images"></i>
+                </div>
+                <div class="banner-decor decor-b">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+                <div class="banner-decor decor-c">
+                    <i class="fa-solid fa-sliders"></i>
+                </div>
+                <h2>GalerÃ­as por PÃ¡gina</h2>
+                <p>Agrega y administra las imÃ¡genes de AcadÃ©mico, Estudiantes, Padres, Horarios, Contacto y Nuestro Colegio.</p>
+                <span class="banner-tag">Administrador</span>
+            </section>
+
+            <div class="admin-content">
+
+                <!-- ==================== ACADÃ‰MICO ==================== -->
+                <section class="pagina-secciones">
+                    <div class="section-header" data-reveal>
+                        <span class="section-kicker">AcadÃ©mico</span>
+                        <h3>GalerÃ­a AcadÃ©mica</h3>
+                        <p>FotografÃ­as que se muestran en la pÃ¡gina AcadÃ©mico. Se agregan o eliminan desde aquÃ­.</p>
+                    </div>
+
+                    <div class="image-uploader">
+                        <div class="img-preview-grid" id="galeriaLista-academico"></div>
+                        <div>
+                            <input type="file" id="inputGaleria-academico" accept="image/jpeg,image/png,image/gif,image/webp" multiple hidden>
+                            <button type="button" class="btn-agregar-imagen" data-input="inputGaleria-academico">
+                                <i class="fa-solid fa-cloud-arrow-up"></i> Agregar imÃ¡genes
+                            </button>
+                            <small class="img-hint">JPG, PNG, GIF o WEBP Â· hasta 5 MB por imagen</small>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==================== ESTUDIANTES ==================== -->
+                <section class="pagina-secciones">
+                    <div class="section-header" data-reveal>
+                        <span class="section-kicker">Estudiantes</span>
+                        <h3>GalerÃ­a Estudiantil</h3>
+                        <p>FotografÃ­as que se muestran en la pÃ¡gina Estudiantes. Se agregan o eliminan desde aquÃ­.</p>
+                    </div>
+
+                    <div class="image-uploader">
+                        <div class="img-preview-grid" id="galeriaLista-estudiantes"></div>
+                        <div>
+                            <input type="file" id="inputGaleria-estudiantes" accept="image/jpeg,image/png,image/gif,image/webp" multiple hidden>
+                            <button type="button" class="btn-agregar-imagen" data-input="inputGaleria-estudiantes">
+                                <i class="fa-solid fa-cloud-arrow-up"></i> Agregar imÃ¡genes
+                            </button>
+                            <small class="img-hint">JPG, PNG, GIF o WEBP Â· hasta 5 MB por imagen</small>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==================== PADRES ==================== -->
+                <section class="pagina-secciones">
+                    <div class="section-header" data-reveal>
+                        <span class="section-kicker">Padres</span>
+                        <h3>GalerÃ­a para Padres</h3>
+                        <p>FotografÃ­as que se muestran en la pÃ¡gina Padres. Se agregan o eliminan desde aquÃ­.</p>
+                    </div>
+
+                    <div class="image-uploader">
+                        <div class="img-preview-grid" id="galeriaLista-padres"></div>
+                        <div>
+                            <input type="file" id="inputGaleria-padres" accept="image/jpeg,image/png,image/gif,image/webp" multiple hidden>
+                            <button type="button" class="btn-agregar-imagen" data-input="inputGaleria-padres">
+                                <i class="fa-solid fa-cloud-arrow-up"></i> Agregar imÃ¡genes
+                            </button>
+                            <small class="img-hint">JPG, PNG, GIF o WEBP Â· hasta 5 MB por imagen</small>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==================== HORARIOS ==================== -->
+                <section class="pagina-secciones">
+                    <div class="section-header" data-reveal>
+                        <span class="section-kicker">Horarios</span>
+                        <h3>GalerÃ­a Institucional</h3>
+                        <p>FotografÃ­as que se muestran en la pÃ¡gina Horarios. Se agregan o eliminan desde aquÃ­.</p>
+                    </div>
+
+                    <div class="image-uploader">
+                        <div class="img-preview-grid" id="galeriaLista-horarios"></div>
+                        <div>
+                            <input type="file" id="inputGaleria-horarios" accept="image/jpeg,image/png,image/gif,image/webp" multiple hidden>
+                            <button type="button" class="btn-agregar-imagen" data-input="inputGaleria-horarios">
+                                <i class="fa-solid fa-cloud-arrow-up"></i> Agregar imÃ¡genes
+                            </button>
+                            <small class="img-hint">JPG, PNG, GIF o WEBP Â· hasta 5 MB por imagen</small>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==================== CONTACTO ==================== -->
+                <section class="pagina-secciones">
+                    <div class="section-header" data-reveal>
+                        <span class="section-kicker">Contacto</span>
+                        <h3>GalerÃ­a de Contacto</h3>
+                        <p>FotografÃ­as que se muestran en la pÃ¡gina Contacto. Se agregan o eliminan desde aquÃ­.</p>
+                    </div>
+
+                    <div class="image-uploader">
+                        <div class="img-preview-grid" id="galeriaLista-contacto"></div>
+                        <div>
+                            <input type="file" id="inputGaleria-contacto" accept="image/jpeg,image/png,image/gif,image/webp" multiple hidden>
+                            <button type="button" class="btn-agregar-imagen" data-input="inputGaleria-contacto">
+                                <i class="fa-solid fa-cloud-arrow-up"></i> Agregar imÃ¡genes
+                            </button>
+                            <small class="img-hint">JPG, PNG, GIF o WEBP Â· hasta 5 MB por imagen</small>
+                        </div>
+                    </div>
+                </section>
+
+            <!-- ==================== INSTALACIONES Y BENEFICIOS ==================== -->
+                <section class="pagina-secciones">
+                    <div class="section-header" data-reveal>
+                        <span class="section-kicker">Nuestro Colegio</span>
+                        <h3>Instalaciones y Beneficios Estudiantiles</h3>
+                        <p>FotografÃ­as que complementan cada tarjeta de la pÃ¡gina Nuestro Colegio. Se agregan o eliminan desde aquÃ­.</p>
+                    </div>
+
+                    <div class="admin-items-grid">
+
+                        <div class="admin-item-up">
+                            <div class="admin-item-titulo"><strong>1. Aulas Amplias</strong></div>
+                            <div class="image-uploader">
+                                <div class="img-preview-grid" id="instalacionLista-1"></div>
+                                <div>
+                                    <input type="file" id="inputInstalacion-1" accept="image/jpeg,image/png,image/gif,image/webp" multiple hidden>
+                                    <button type="button" class="btn-agregar-imagen" data-input="inputInstalacion-1">
+                                        <i class="fa-solid fa-cloud-arrow-up"></i> Agregar imÃ¡genes
+                                    </button>
+                                    <small class="img-hint">JPG, PNG, GIF o WEBP Â· hasta 5 MB por imagen</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="admin-item-up">
+                            <div class="admin-item-titulo"><strong>2. Biblioteca</strong></div>
+                            <div class="image-uploader">
+                                <div class="img-preview-grid" id="instalacionLista-2"></div>
+                                <div>
+                                    <input type="file" id="inputInstalacion-2" accept="image/jpeg,image/png,image/gif,image/webp" multiple hidden>
+                                    <button type="button" class="btn-agregar-imagen" data-input="inputInstalacion-2">
+                                        <i class="fa-solid fa-cloud-arrow-up"></i> Agregar imÃ¡genes
+                                    </button>
+                                    <small class="img-hint">JPG, PNG, GIF o WEBP Â· hasta 5 MB por imagen</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="admin-item-up">
+                            <div class="admin-item-titulo"><strong>3. Sala de InformÃ¡tica</strong></div>
+                            <div class="image-uploader">
+                                <div class="img-preview-grid" id="instalacionLista-3"></div>
+                                <div>
+                                    <input type="file" id="inputInstalacion-3" accept="image/jpeg,image/png,image/gif,image/webp" multiple hidden>
+                                    <button type="button" class="btn-agregar-imagen" data-input="inputInstalacion-3">
+                                        <i class="fa-solid fa-cloud-arrow-up"></i> Agregar imÃ¡genes
+                                    </button>
+                                    <small class="img-hint">JPG, PNG, GIF o WEBP Â· hasta 5 MB por imagen</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="admin-item-up">
+                            <div class="admin-item-titulo"><strong>4. Laboratorio</strong></div>
+                            <div class="image-uploader">
+                                <div class="img-preview-grid" id="instalacionLista-4"></div>
+                                <div>
+                                    <input type="file" id="inputInstalacion-4" accept="image/jpeg,image/png,image/gif,image/webp" multiple hidden>
+                                    <button type="button" class="btn-agregar-imagen" data-input="inputInstalacion-4">
+                                        <i class="fa-solid fa-cloud-arrow-up"></i> Agregar imÃ¡genes
+                                    </button>
+                                    <small class="img-hint">JPG, PNG, GIF o WEBP Â· hasta 5 MB por imagen</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="admin-item-up">
+                            <div class="admin-item-titulo"><strong>5. Zonas Deportivas</strong></div>
+                            <div class="image-uploader">
+                                <div class="img-preview-grid" id="instalacionLista-5"></div>
+                                <div>
+                                    <input type="file" id="inputInstalacion-5" accept="image/jpeg,image/png,image/gif,image/webp" multiple hidden>
+                                    <button type="button" class="btn-agregar-imagen" data-input="inputInstalacion-5">
+                                        <i class="fa-solid fa-cloud-arrow-up"></i> Agregar imÃ¡genes
+                                    </button>
+                                    <small class="img-hint">JPG, PNG, GIF o WEBP Â· hasta 5 MB por imagen</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="admin-item-up">
+                            <div class="admin-item-titulo"><strong>6. Zonas Verdes</strong></div>
+                            <div class="image-uploader">
+                                <div class="img-preview-grid" id="instalacionLista-6"></div>
+                                <div>
+                                    <input type="file" id="inputInstalacion-6" accept="image/jpeg,image/png,image/gif,image/webp" multiple hidden>
+                                    <button type="button" class="btn-agregar-imagen" data-input="inputInstalacion-6">
+                                        <i class="fa-solid fa-cloud-arrow-up"></i> Agregar imÃ¡genes
+                                    </button>
+                                    <small class="img-hint">JPG, PNG, GIF o WEBP Â· hasta 5 MB por imagen</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="admin-item-up">
+                            <div class="admin-item-titulo"><strong>7. Servicio de AlimentaciÃ³n</strong></div>
+                            <div class="image-uploader">
+                                <div class="img-preview-grid" id="instalacionLista-7"></div>
+                                <div>
+                                    <input type="file" id="inputInstalacion-7" accept="image/jpeg,image/png,image/gif,image/webp" multiple hidden>
+                                    <button type="button" class="btn-agregar-imagen" data-input="inputInstalacion-7">
+                                        <i class="fa-solid fa-cloud-arrow-up"></i> Agregar imÃ¡genes
+                                    </button>
+                                    <small class="img-hint">JPG, PNG, GIF o WEBP Â· hasta 5 MB por imagen</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="admin-item-up">
+                            <div class="admin-item-titulo"><strong>8. Bienestar y Salud</strong></div>
+                            <div class="image-uploader">
+                                <div class="img-preview-grid" id="instalacionLista-8"></div>
+                                <div>
+                                    <input type="file" id="inputInstalacion-8" accept="image/jpeg,image/png,image/gif,image/webp" multiple hidden>
+                                    <button type="button" class="btn-agregar-imagen" data-input="inputInstalacion-8">
+                                        <i class="fa-solid fa-cloud-arrow-up"></i> Agregar imÃ¡genes
+                                    </button>
+                                    <small class="img-hint">JPG, PNG, GIF o WEBP Â· hasta 5 MB por imagen</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="admin-item-up">
+                            <div class="admin-item-titulo"><strong>9. OrientaciÃ³n Escolar</strong></div>
+                            <div class="image-uploader">
+                                <div class="img-preview-grid" id="instalacionLista-9"></div>
+                                <div>
+                                    <input type="file" id="inputInstalacion-9" accept="image/jpeg,image/png,image/gif,image/webp" multiple hidden>
+                                    <button type="button" class="btn-agregar-imagen" data-input="inputInstalacion-9">
+                                        <i class="fa-solid fa-cloud-arrow-up"></i> Agregar imÃ¡genes
+                                    </button>
+                                    <small class="img-hint">JPG, PNG, GIF o WEBP Â· hasta 5 MB por imagen</small>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- ==================== SÃMBOLOS INSTITUCIONALES ==================== -->
+                <section class="pagina-secciones">
+                    <div class="section-header" data-reveal>
+                        <span class="section-kicker">Identidad</span>
+                        <h3>SÃ­mbolos Institucionales</h3>
+                        <p>ImÃ¡genes del Escudo, la Bandera y el Himno que se muestran en Nuestro Colegio. Se agregan o eliminan desde aquÃ­.</p>
+                    </div>
+
+                    <div class="admin-items-grid">
+
+                        <div class="admin-item-up">
+                            <div class="admin-item-titulo"><strong>El Escudo</strong></div>
+                            <div class="image-uploader">
+                                <div class="img-preview-grid" id="simboloLista-1"></div>
+                                <div>
+                                    <input type="file" id="inputSimbolo-1" accept="image/jpeg,image/png,image/gif,image/webp" multiple hidden>
+                                    <button type="button" class="btn-agregar-imagen" data-input="inputSimbolo-1">
+                                        <i class="fa-solid fa-cloud-arrow-up"></i> Agregar imÃ¡genes
+                                    </button>
+                                    <small class="img-hint">JPG, PNG, GIF o WEBP Â· hasta 5 MB por imagen</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="admin-item-up">
+                            <div class="admin-item-titulo"><strong>La Bandera</strong></div>
+                            <div class="image-uploader">
+                                <div class="img-preview-grid" id="simboloLista-2"></div>
+                                <div>
+                                    <input type="file" id="inputSimbolo-2" accept="image/jpeg,image/png,image/gif,image/webp" multiple hidden>
+                                    <button type="button" class="btn-agregar-imagen" data-input="inputSimbolo-2">
+                                        <i class="fa-solid fa-cloud-arrow-up"></i> Agregar imÃ¡genes
+                                    </button>
+                                    <small class="img-hint">JPG, PNG, GIF o WEBP Â· hasta 5 MB por imagen</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="admin-item-up">
+                            <div class="admin-item-titulo"><strong>El Himno</strong></div>
+                            <div class="image-uploader">
+                                <div class="img-preview-grid" id="simboloLista-3"></div>
+                                <div>
+                                    <input type="file" id="inputSimbolo-3" accept="image/jpeg,image/png,image/gif,image/webp" multiple hidden>
+                                    <button type="button" class="btn-agregar-imagen" data-input="inputSimbolo-3">
+                                        <i class="fa-solid fa-cloud-arrow-up"></i> Agregar imÃ¡genes
+                                    </button>
+                                    <small class="img-hint">JPG, PNG, GIF o WEBP Â· hasta 5 MB por imagen</small>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Mensaje de confirmaciÃ³n -->
+        <div class="admin-toast" id="adminToast">
+            <i class="fa-solid fa-check-circle"></i>
+            <span id="adminToastMsg">Cambios guardados correctamente.</span>
+        </div>
+
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer>
+        <div class="footer-content">
+            <p>"Educar es sembrar hoy para cosechar maÃ±ana."</p>
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/share/1BzNG8ZxmF/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@INSTITUCIONEDUCATIVASANFELIX" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="copyright-bar">
+        <p>&copy; 2026 Todos los derechos reservados. Juan Pablo Quintero.</p>
+    </div>
+
+    <script src="../js/interactividad.js"></script>
+    <script src="../js/buscador.js"></script>
+    <script src="../js/auth.js?v=6"></script>
+    <script src="../js/admin-paginas.js?v=2"></script>
+    <script src="../js/admin-nav.js?v=3"></script>
+    <script src="../js/admin-sesion.js"></script>
+
+</body>
+
+</html>

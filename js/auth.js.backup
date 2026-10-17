@@ -1,0 +1,32 @@
+...
+[el archivo ya existe, pero necesito añadir método llamarAPI público?]
+ver: agenda.js llama AuthDB.llamarAPI cuando existe. Mejor exponerlo.
+editando:
+function llamarAPI(endpoint, datos, msLimite) { ... }
+y en return añadir llamarAPI: llamarAPI,
+ también ya existe? revisar: no veo llamarAPI expuesto. solo usa internamente.
+ pero agenda.js lo consulta: if (AuthDB.llamarAPI) ... 
+ mejor añadirlo al API pública.
+
+en return:
+return {
+    login: login,
+    logout: cerrarSesion,
+    getSesion: obtenerSesion,
+    mantenerSesion: mantenerSesion,
+    getAllUsers: obtenerTodosUsuarios,
+    addUser: agregarUsuario,
+    crearUsuarioAdmin: crearUsuarioAdmin,
+    removeUser: eliminarUsuario,
+    toggleUser: cambiarEstado,
+    apiContenido: apiContenido,
+    leerSecciones: leerSecciones,
+    guardarSeccion: guardarSeccion,
+    subirImagenes: subirImagenes,
+    eliminarImagen: eliminarImagen,
+    subirDocumento: subirDocumento,
+    eliminarDocumento: eliminarDocumento,
+    imagenRuta: imagenRuta,
+    llamarAPI: llamarAPI  // añadir
+};
+```

@@ -1,0 +1,982 @@
+/* ==================== PÁGINA PRINCIPAL ==================== */
+
+/* ---- Slider / Hero ---- */
+.slider::before {
+    background:
+        /* Velo inferior: sin él, los indicadores y las flechas quedan
+           encima de la foto y se pierden. */
+        linear-gradient(to top, rgba(2, 6, 23, 0.66) 0%, rgba(2, 6, 23, 0.24) 24%, rgba(2, 6, 23, 0) 48%),
+        radial-gradient(700px 360px at 0% 0%, rgba(255, 255, 255, 0.26), transparent 60%),
+        radial-gradient(600px 360px at 100% 100%, rgba(255, 255, 255, 0.18), transparent 60%),
+        linear-gradient(135deg, rgba(30, 58, 138, 0.25) 0%, rgba(37, 99, 235, 0.2) 35%, rgba(13, 148, 136, 0.2) 70%, rgba(245, 158, 11, 0.16) 100%);
+}
+
+.slider::after {
+    /* El panel esmerilado cubre todo el bloque de texto (llega al ~72%),
+       que es el que necesita contraste sobre la fotografía. */
+    width: 72%;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 72%, transparent 100%);
+    mask-image: linear-gradient(90deg, #000 0%, #000 72%, transparent 100%);
+}
+
+/* ---- Acento de color por diapositiva ----
+   Cada diapositiva declara el suyo con data-tema y el resto del carrusel
+   (rótulo, títulos, círculo e indicadores) lo toma de estas variables, así
+   el matiz de la portada cambia al pasar de pestaña. */
+.slider-slide[data-tema='bienvenida'] {
+    --acento: #38bdf8;
+    --acento-luz: rgba(56, 189, 248, 0.45);
+}
+
+.slider-slide[data-tema='manual'] {
+    --acento: #2dd4bf;
+    --acento-luz: rgba(45, 212, 191, 0.45);
+}
+
+.slider-slide[data-tema='colegio'] {
+    --acento: #a78bfa;
+    --acento-luz: rgba(167, 139, 250, 0.45);
+}
+
+.slider-slide[data-tema='academico'] {
+    --acento: #fbbf24;
+    --acento-luz: rgba(251, 191, 36, 0.4);
+}
+
+.slider-slide[data-tema='eventos'] {
+    --acento: #fb7185;
+    --acento-luz: rgba(251, 113, 133, 0.42);
+}
+
+.slider-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    color: #ffffff;
+    padding: 7px 18px;
+    border-radius: 30px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
+    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.3);
+}
+
+.slider-pill i {
+    color: var(--acento, #fde68a);
+    filter: drop-shadow(0 0 8px var(--acento-luz, rgba(253, 230, 138, 0.5)));
+}
+
+.slider-decor {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.3);
+    z-index: 1;
+    pointer-events: none;
+    filter: drop-shadow(0 8px 20px rgba(5, 7, 15, 0.35));
+}
+
+.slider-decor i {
+    font-size: 3.6rem;
+}
+
+.slider-decor.decor-a {
+    top: 26px;
+    right: 34px;
+    transform: rotate(-14deg);
+}
+
+.slider-decor.decor-b {
+    top: 28px;
+    left: 26px;
+    transform: rotate(12deg);
+}
+
+.slider-decor.decor-b i {
+    font-size: 2.6rem;
+}
+
+.slider-decor.decor-c {
+    bottom: 26px;
+    right: 330px;
+    transform: rotate(8deg);
+}
+
+.slider-decor.decor-c i {
+    font-size: 2rem;
+    opacity: 0.7;
+}
+
+/* ---- Diapositivas del slider ---- */
+.slider-contenido {
+    display: grid;
+    /* Deja sitio a la píldora de indicadores para que el texto de la
+       diapositiva más larga no quede por debajo. */
+    padding-bottom: 62px;
+}
+
+.slider-slide {
+    grid-area: 1 / 1;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 34px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(64px) scale(0.97);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
+        visibility 0s linear 0.6s;
+    pointer-events: none;
+}
+
+.slider-slide.anterior {
+    transform: translateX(-64px) scale(0.97);
+}
+
+.slider-slide.activo {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0) scale(1);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+    pointer-events: auto;
+}
+
+/* ---- Texto de la diapositiva ---- */
+.slider-texto {
+    max-width: 620px;
+}
+
+/* Sombra en dos capas: una oscura para despegar el texto de la foto y otra
+   del color de la diapositiva para darle profundidad. */
+.slider-texto h2 {
+    text-shadow: 0 2px 24px rgba(2, 6, 23, 0.55), 0 0 42px var(--acento-luz, rgba(13, 148, 136, 0.35));
+}
+
+.slider-texto h3 {
+    text-shadow: 0 2px 18px rgba(2, 6, 23, 0.45);
+}
+
+.slider-texto p {
+    text-shadow: 0 1px 14px rgba(2, 6, 23, 0.45);
+}
+
+/* Ficha del manual: nombre del archivo, formato y tamaño */
+.slider-texto p.slider-nota {
+    display: inline-block;
+    max-width: 100%;
+    margin: 22px 0 0;
+    padding: 9px 18px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    font-size: 0.78rem;
+    letter-spacing: 1.2px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 8px 22px rgba(2, 6, 23, 0.28);
+}
+
+.slider-visual {
+    position: relative;
+    flex-shrink: 0;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle at 50% 50%, var(--acento-luz, rgba(13, 148, 136, 0.4)) 0%, transparent 70%),
+        radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.12) 62%);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow:
+        0 0 0 8px rgba(255, 255, 255, 0.07),
+        0 0 64px -6px var(--acento, #2dd4bf),
+        inset 0 0 50px rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
+}
+
+/* Anillo exterior que gira muy despacio: da vida al círculo sin distraer */
+.slider-visual::after {
+    content: '';
+    position: absolute;
+    inset: -15px;
+    border-radius: 50%;
+    border: 1px dashed rgba(255, 255, 255, 0.32);
+    animation: girarAnillo 28s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes girarAnillo {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.slider-visual i {
+    font-size: 5.5rem;
+    color: rgba(255, 255, 255, 0.98);
+    filter: drop-shadow(0 10px 28px rgba(13, 148, 136, 0.6));
+    animation: visual-flotar 4.5s ease-in-out infinite;
+}
+
+@keyframes visual-flotar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slider-slide {
+        transition: none;
+        transform: none;
+    }
+
+    .slider-visual i {
+        animation: none;
+    }
+
+    .slider-visual::after {
+        animation: none;
+    }
+}
+
+/* ---- Flechas del carrusel ----
+   Van posicionadas de forma absoluta: como elementos del flex le quitaban
+   ancho al bloque de texto, y al ser centradas se montaban encima. */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(14px) saturate(150%);
+    -webkit-backdrop-filter: blur(14px) saturate(150%);
+    box-shadow: 0 12px 30px rgba(2, 6, 23, 0.4);
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease,
+        box-shadow 0.25s ease;
+    z-index: 3;
+}
+
+.slider-btn.izquierda {
+    left: 22px;
+}
+
+.slider-btn.derecha {
+    right: 22px;
+}
+
+.slider-btn:hover {
+    background: rgba(255, 255, 255, 0.94);
+    color: #0f172a;
+    transform: translateY(-50%) scale(1.09);
+    box-shadow: 0 14px 34px rgba(2, 6, 23, 0.45);
+}
+
+.slider-btn:focus-visible {
+    outline: 3px solid #fbbf24;
+    outline-offset: 3px;
+}
+
+/* ---- Indicadores: barras de progreso sobre una píldora de cristal ----
+   Antes eran puntos de 12 px casi blancos sobre la foto: se perdían y no se
+   distinguía el activo. Ahora la barra activa se alarga y se tiñe. */
+.slider-indicadores {
+    bottom: 24px;
+    gap: 8px;
+    padding: 9px 16px;
+    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 12px 30px rgba(2, 6, 23, 0.35);
+    backdrop-filter: blur(14px) saturate(150%);
+    -webkit-backdrop-filter: blur(14px) saturate(150%);
+    z-index: 3;
+}
+
+.slider-indicadores span,
+.slider-indicadores button {
+    width: 30px;
+    height: 6px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.45);
+    transition: width 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), background 0.3s ease,
+        box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* La barra visible mide 6 px de alto, así que el área pulsable se amplía con
+   un pseudoelemento (WCAG 2.5.8) sin hinchar la barra. */
+.slider-indicadores button::after {
+    top: -10px;
+    right: -4px;
+    bottom: -10px;
+    left: -4px;
+}
+
+.slider-indicadores span:hover,
+.slider-indicadores button:hover {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+.slider-indicadores span.activo,
+.slider-indicadores button.activo {
+    width: 56px;
+    background: linear-gradient(90deg, #fde68a, #f59e0b);
+    box-shadow: 0 0 16px rgba(245, 158, 11, 0.8);
+    transform: none;
+}
+
+/* ---- Botón secundario del hero ---- */
+.btn-outline {
+    background: rgba(255, 255, 255, 0.12);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    color: #ffffff;
+    padding: 13px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background: #ffffff;
+    color: var(--azul-medio);
+    border-color: #ffffff;
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.btn-conocenos {
+    background: linear-gradient(135deg, var(--azul-medio), var(--teal));
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4);
+}
+
+.btn-conocenos:hover {
+    background: linear-gradient(135deg, var(--teal), var(--ambar));
+    box-shadow: 0 8px 22px rgba(13, 148, 136, 0.45);
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* ---- Encabezado de sección ---- */
+.info-section {
+    display: block;
+    min-height: 0;
+    padding: 60px 20px 70px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.section-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--ambar-oscuro);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.section-kicker::before,
+.section-kicker::after {
+    content: '';
+    width: 40px;
+    height: 2px;
+    border-radius: 2px;
+}
+
+.section-kicker::before {
+    background: linear-gradient(90deg, transparent, var(--ambar));
+}
+
+.section-kicker::after {
+    background: linear-gradient(90deg, var(--ambar), transparent);
+}
+
+.section-header h3 {
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--azul-oscuro);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 18px 0;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 4px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--azul-medio), var(--teal), var(--ambar));
+}
+
+.section-header p {
+    color: var(--texto-claro);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.info-container {
+    margin: 0 auto;
+}
+
+/* ---- Tarjetas ---- */
+.info-card {
+    animation: fadeUp 0.6s ease backwards;
+}
+
+.info-card:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.info-card:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.info-card:nth-child(3) {
+    animation-delay: 0.25s;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Colores organizados por evento */
+.event-list li:nth-child(2) .event-date {
+    background: linear-gradient(135deg, #dbeafe, #eff6ff);
+    border-color: rgba(37, 99, 235, 0.4);
+}
+
+.event-list li:nth-child(2) .event-date .day {
+    color: var(--azul-medio);
+}
+
+.event-list li:nth-child(2) .event-date .month {
+    color: var(--azul-oscuro);
+}
+
+.event-list li:nth-child(3) .event-date {
+    background: linear-gradient(135deg, #fef3c7, #fffbeb);
+    border-color: rgba(245, 158, 11, 0.4);
+}
+
+.event-list li:nth-child(3) .event-date .day {
+    color: var(--ambar-oscuro);
+}
+
+.event-list li:nth-child(3) .event-date .month {
+    color: var(--ambar);
+}
+
+/* Tarjeta de horarios con el mismo degradado del banner */
+.info-card.horarios {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 40%, #0d9488 75%, #f59e0b 100%);
+}
+
+/* ---- CTA ---- */
+.cta-banda {
+    position: relative;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    background: linear-gradient(135deg, #2563eb, #0d9488, #f59e0b);
+    border-radius: 20px;
+    padding: 45px 30px;
+    color: #ffffff;
+    box-shadow: 0 12px 32px rgba(13, 148, 136, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cta-contenido h3 {
+    font-size: 1.6rem;
+    margin: 0 0 6px 0;
+}
+
+.cta-contenido p {
+    margin: 0 0 18px 0;
+    color: #ccfbf1;
+}
+
+.btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    color: #0d9488;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.btn-cta:hover {
+    background: var(--ambar);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(245, 158, 11, 0.4);
+}
+
+.cta-icono {
+    font-size: 5rem;
+    color: rgba(255, 255, 255, 0.25);
+    transform: rotate(-8deg);
+}
+
+/* ---- Responsive ---- */
+/* El círculo ilustrado (250px) y las flechas (46px) necesitan más hueco del
+   que queda en pantallas medianas: se ocultan antes de que aprieten el
+   texto. En esos tamaños se navega con los indicadores o deslizando. */
+@media (max-width: 1100px) {
+
+    .slider-decor,
+    .slider-visual,
+    .slider-btn {
+        display: none;
+    }
+
+    .slider-contenido {
+        padding-bottom: 56px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cta-banda {
+        justify-content: center;
+        text-align: center;
+        margin: 0 10px 40px;
+    }
+
+    .cta-icono {
+        display: none;
+    }
+}
+
+/* ---- Corrección de secciones oscuras (solo página de inicio) ---- */
+body {
+    background: linear-gradient(135deg, #f2f7ff 0%, #eef2ff 35%, #fffbeb 70%, #f0fdfa 100%);
+}
+
+body::before,
+body::after {
+    display: none !important;
+}
+
+.slider {
+    background-color: #2563eb;
+}
+
+footer {
+    background: linear-gradient(90deg, #2563eb, #14b8a6, #0d9488, #14b8a6, #2563eb);
+    box-shadow: 0 -5px 30px rgba(59, 130, 246, 0.35);
+}
+
+.copyright-bar {
+    background: linear-gradient(90deg, #2563eb, #0d9488);
+    color: #f0fdfa;
+}
+
+.copyright-bar p {
+    color: #f0fdfa;
+}
+
+/*==================== ZONA INTERACTIVA ====================*/
+.extra-seccion {
+    max-width: 1100px;
+    margin: 0 auto 70px;
+    padding: 0 10px;
+}
+
+/* ---- Cuenta regresiva ---- */
+.countdown-caja {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 35%, #0d9488 70%, #f59e0b 100%);
+    border-radius: 24px;
+    padding: 42px 30px;
+    color: #ffffff;
+    box-shadow: 0 16px 42px rgba(13, 148, 136, 0.35);
+}
+
+.countdown-caja::after {
+    content: '';
+    position: absolute;
+    top: -70px;
+    right: -70px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    pointer-events: none;
+}
+
+.cd-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.countdown-caja h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 14px 0 4px;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+.cd-sub {
+    margin: 0 0 26px;
+    color: #ecfdf5;
+}
+
+.cuenta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(90px, 130px));
+    justify-content: center;
+    gap: 14px;
+}
+
+.cuenta-caja {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 16px;
+    padding: 16px 10px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.cuenta-caja strong {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+}
+
+.cuenta-caja span {
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+.cd-btn {
+    margin-top: 26px;
+    background: #ffffff;
+    color: var(--teal-oscuro);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+.cd-btn:hover {
+    background: var(--ambar);
+    color: #78350f;
+}
+
+/* ---- Preguntas frecuentes ---- */
+.faq-wrap {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: grid;
+    gap: 12px;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(14, 84, 194, 0.16);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(14, 84, 194, 0.08);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item.abierto {
+    border-color: rgba(37, 99, 235, 0.45);
+    box-shadow: 0 12px 32px rgba(37, 99, 235, 0.15);
+}
+
+.faq-pregunta {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    padding: 17px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: #12275a;
+    text-align: left;
+}
+
+.faq-pregunta i {
+    flex-shrink: 0;
+    color: var(--teal);
+    transition: transform 0.35s ease;
+}
+
+.faq-item.abierto .faq-pregunta i {
+    transform: rotate(180deg);
+}
+
+.faq-respuesta {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.faq-respuesta p {
+    margin: 0;
+    padding: 0 20px 18px;
+    color: #4a6b9c;
+    line-height: 1.6;
+    font-size: 0.93rem;
+}
+
+/* ---- Responsive zona interactiva ---- */
+@media (max-width: 520px) {
+    .cuenta-grid {
+        grid-template-columns: repeat(2, minmax(110px, 140px));
+    }
+
+    .countdown-caja h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* ---- Imágenes cargadas desde MySQL ---- */
+.slider-visual .slider-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.event-list li .event-thumb {
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid rgba(13, 148, 136, 0.35);
+}
+
+.news-image .news-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+/*==================== MEJOR DISTRIBUCIÓN EN MÓVILES (PORTADA) ====================*/
+@media (max-width: 600px) {
+    /* Hero: altura automática y botones apilados a ancho completo */
+    .slider {
+        height: auto;
+        min-height: 470px;
+        padding: 44px 20px 70px;
+    }
+
+    /* Aquí el hueco inferior lo da el propio .slider, así que el que se
+       reservaba para los indicadores sobre y se duplicaría. */
+    .slider-contenido {
+        padding-bottom: 0;
+    }
+
+    .slider-indicadores {
+        bottom: 16px;
+        padding: 8px 13px;
+        gap: 6px;
+    }
+
+    .slider-indicadores span,
+    .slider-indicadores button {
+        width: 22px;
+    }
+
+    .slider-indicadores span.activo,
+    .slider-indicadores button.activo {
+        width: 42px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .hero-buttons .btn-conocenos,
+    .hero-buttons .btn-outline {
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        padding: 13px 16px;
+    }
+
+    /* Encabezados de sección más compactos */
+    .section-header {
+        margin-bottom: 28px;
+        padding: 0 4px;
+    }
+
+    .section-header h3 {
+        font-size: 1.5rem;
+    }
+
+    .section-header p {
+        font-size: 0.9rem;
+    }
+
+    /* Tarjetas con aire equilibrado */
+    .info-section {
+        padding: 44px 14px 52px;
+    }
+
+    .info-container {
+        gap: 18px;
+    }
+
+    .info-card {
+        padding: 18px;
+    }
+
+    /* Eventos con imagen real: sin apretujo */
+    .event-list li .event-thumb {
+        width: 44px;
+        height: 44px;
+        border-radius: 8px;
+    }
+
+    .event-list li {
+        gap: 10px;
+    }
+
+    .event-date {
+        min-width: 52px;
+        padding: 7px 9px;
+    }
+
+    .event-date .day {
+        font-size: 1.2rem;
+    }
+
+    .event-date .month {
+        font-size: 0.7rem;
+    }
+
+    /* Banda CTA contenida */
+    .cta-banda {
+        margin: 0 0 36px;
+        padding: 34px 22px;
+        border-radius: 16px;
+    }
+
+    .cta-contenido h3 {
+        font-size: 1.3rem;
+    }
+
+    .btn-cta {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Cuenta regresiva compacta */
+    .countdown-caja {
+        padding: 30px 18px;
+        border-radius: 18px;
+    }
+
+    .cuenta-grid {
+        gap: 10px;
+    }
+
+    .cuenta-caja {
+        padding: 12px 8px;
+    }
+
+    .cuenta-caja strong {
+        font-size: 1.7rem;
+    }
+
+    /* Zona interactiva con separaciones regulares */
+    .extra-seccion {
+        margin-bottom: 48px;
+        padding: 0 8px;
+    }
+}

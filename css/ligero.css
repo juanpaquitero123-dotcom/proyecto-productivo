@@ -1,0 +1,383 @@
+/* ==================== TEMA CLARO PARA PÁGINAS INTERIORES ==================== */
+/* Se carga después de la hoja propia de cada página (Nuestro Colegio, Académico,
+   Estudiantes, Padres, Horarios, Noticias, Contacto, Eventos) para que comparta
+   el mismo fondo claro y menos saturado de la portada y del panel de administración. */
+
+:root {
+    --premium-claro: #334155;
+    --premium-text-muted: #5b6b84;
+    --glass-fondo: rgba(255, 255, 255, 0.92);
+    --glass-borde: rgba(15, 23, 42, 0.1);
+    --gradiente-neon: linear-gradient(135deg, #2563eb 0%, #0d9488 70%, #f59e0b 100%);
+    --gradiente-texto: linear-gradient(90deg, #1e3a8a 0%, #0d9488 60%, #b45309 100%);
+}
+
+body {
+    background: linear-gradient(135deg, #f2f7ff 0%, #eef2ff 35%, #fffbeb 70%, #f0fdfa 100%);
+    background-attachment: fixed;
+    color: #1c2a44;
+}
+
+body::before,
+body::after {
+    display: none !important;
+}
+
+/* ==================== TÍTULOS Y TEXTOS DE SECCIÓN ==================== */
+.pagina h2 {
+    background: var(--gradiente-texto);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--azul-oscuro);
+}
+
+.eventos-banner h2 {
+    color: #ffffff;
+    background: transparent;
+    -webkit-text-fill-color: #ffffff;
+}
+
+.section-header p {
+    color: #5b6b84;
+}
+
+/* ==================== TARJETAS: VIDRIO OSCURO -> TARJETA BLANCA ==================== */
+.nivel-card,
+.area-card,
+.plan-card,
+.proyecto-card,
+.beneficio-card,
+.proceso-card,
+.documento-item,
+.convivencia-card,
+.familia-card,
+.matricula-card,
+.formacion-card,
+.jornada-card,
+.aviso-card,
+.noticia-card,
+.historia-card,
+.hito,
+.simbolo-card,
+.info-rapida-caja,
+.info-card,
+.canal-card,
+.horario-item,
+.mapa-placeholder,
+.horario-grado,
+.horario-clases-scroll,
+.stat-caja {
+    background: #ffffff;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: 0 10px 30px rgba(10, 61, 145, 0.08);
+    color: #1c2a44;
+}
+
+.nivel-card:hover,
+.area-card:hover,
+.plan-card:hover,
+.proyecto-card:hover,
+.beneficio-card:hover,
+.proceso-card:hover,
+.documento-item:hover,
+.convivencia-card:hover,
+.familia-card:hover,
+.matricula-card:hover,
+.formacion-card:hover,
+.jornada-card:hover,
+.aviso-card:hover,
+.noticia-card:hover,
+.historia-card:hover,
+.hito:hover,
+.simbolo-card:hover,
+.info-rapida-caja:hover,
+.info-card:hover,
+.canal-card:hover,
+.stat-caja:hover {
+    box-shadow: 0 14px 34px rgba(10, 61, 145, 0.16);
+}
+
+.info-card.horarios,
+.mapa-placeholder {
+    background: linear-gradient(145deg, rgba(59, 130, 246, 0.12), rgba(139, 92, 246, 0.08) 50%, rgba(34, 211, 238, 0.06));
+    box-shadow: 0 10px 30px rgba(10, 61, 145, 0.08);
+}
+
+.info-card::before {
+    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+}
+
+.card-header {
+    border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+/* ==================== TÍTULOS DENTRO DE TARJETAS BLANCAS ==================== */
+.hito-contenido h4,
+.simbolo-card h4,
+.info-rapida-caja h3,
+.info-rapida-caja h4,
+.nivel-card h3,
+.nivel-card h4,
+.area-card h3,
+.area-card h4,
+.plan-card h3,
+.plan-card h4,
+.proyecto-card h3,
+.proyecto-card h4,
+.beneficio-card h3,
+.beneficio-card h4,
+.proceso-card h3,
+.proceso-card h4,
+.convivencia-card h3,
+.convivencia-card h4,
+.familia-card h3,
+.familia-card h4,
+.matricula-card h3,
+.matricula-card h4,
+.formacion-card h3,
+.formacion-card h4,
+.jornada-cabeza h4,
+.aviso-card h4,
+.noticia-card h4,
+.historia-card h4,
+.canal-card h4,
+.documento-item h4,
+.card-header h3,
+.horarios-content h3,
+.event-details h5,
+.news-details h5,
+.card-body h4,
+.horario-item b,
+.mapa-placeholder span {
+    color: #12294d;
+}
+
+.hito-contenido p,
+.simbolo-card p,
+.aviso-card p,
+.noticia-card p,
+.canal-card p,
+.documento-item p,
+.event-details p,
+.news-details p,
+.horario-item span,
+.mapa-placeholder p {
+    color: #5b6b84;
+}
+
+/* ==================== ENLACES DE ACCENTO (HOVER BLANCO -> AZUL) ==================== */
+.proceso-link:hover,
+.matricula-link:hover,
+.noticia-link:hover,
+.card-header .ver-todos:hover {
+    color: #2563eb;
+    text-shadow: none;
+}
+
+.card-header .ver-todos {
+    color: var(--premium-celeste);
+}
+
+/* ==================== FILAS Y DETALLES EN TARJETAS ==================== */
+.horario-fila {
+    background: #f8fafc;
+    border-color: rgba(15, 23, 42, 0.08);
+    border-left-color: var(--gradiente-neon);
+    color: #334155;
+}
+
+.jornada-card:nth-child(2) .horario-fila {
+    border-left-color: var(--premium-violeta);
+}
+
+.jornada-card:nth-child(3) .horario-fila {
+    border-left-color: var(--premium-celeste);
+}
+
+.horario-item {
+    background: #f8fafc;
+    border-color: rgba(15, 23, 42, 0.08);
+    border-left-color: var(--premium-celeste);
+}
+
+.horario-item:hover {
+    background: #eef2ff;
+}
+
+.info-rapida-caja .info-desplegable {
+    background: #f8fafc;
+    border-color: rgba(15, 23, 42, 0.1);
+    color: #334155;
+}
+
+.info-detalle {
+    color: #5b6b84;
+}
+
+.info-rapida-caja p {
+    color: #5b6b84;
+}
+
+/* ==================== CIFRAS ESTADÍSTICAS ==================== */
+.stat-numero {
+    background: var(--gradiente-texto);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-caja p {
+    color: #5b6b84;
+}
+
+.stat-caja:hover p {
+    color: #12294d;
+}
+
+.stat-caja::after {
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.18), transparent 70%);
+}
+
+/* ==================== HORARIOS: TABLA SEMANAL ==================== */
+.horario-grado {
+    border: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.horario-clases-table {
+    color: #334155;
+}
+
+.horario-clases-table th,
+.horario-clases-table td {
+    border-bottom-color: rgba(15, 23, 42, 0.08);
+    border-right-color: rgba(15, 23, 42, 0.08);
+}
+
+.horario-clases-table tbody tr:nth-child(2n):not(.hct-descanso) td:not(.hct-fija) {
+    background: #f8fafc;
+}
+
+.horario-clases-table .hct-fija {
+    background: #eef2ff;
+    color: #2563eb;
+}
+
+.horario-clases-table thead th.hct-fija {
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.92), rgba(13, 148, 136, 0.85));
+    color: #ffffff;
+}
+
+.horario-clases-table tbody tr:hover td.hct-fija,
+.horario-clases-table tbody tr:not(.hct-descanso):hover td.hct-fija {
+    background: #e2eaff;
+}
+
+.horario-clases-table .hct-descanso td {
+    color: #92400e;
+}
+
+.horario-clases-table .hct-descanso td.hct-fija {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.horario-grado .horario-clases-scroll {
+    background: #f4f7ff;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-top: none;
+    border-radius: 0 0 14px 14px;
+    box-shadow: none;
+}
+
+.horario-dias-nota {
+    color: #5b6b84;
+}
+
+/* ---- Selector de grado (chips) ---- */
+.horario-grado-chip {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.14);
+    color: #1e3a8a;
+    box-shadow: 0 4px 14px rgba(10, 61, 145, 0.1);
+}
+
+.horario-grado-chip::before {
+    color: #2563eb;
+}
+
+.horario-grado-chip:hover,
+.horario-grado-chip.activo {
+    background: var(--gradiente-neon);
+    border-color: transparent;
+    color: #ffffff;
+}
+
+.horario-grado-chip:hover::before {
+    color: #fde68a;
+}
+
+/* ==================== NOTICIAS Y CONTACTO ==================== */
+.noticia-link {
+    color: var(--premium-celeste);
+}
+
+.event-date {
+    background: linear-gradient(135deg, rgba(34, 211, 238, 0.14), rgba(139, 92, 246, 0.1));
+    border-color: rgba(14, 84, 194, 0.3);
+}
+
+.placeholder-img {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(13, 148, 136, 0.08));
+    border: 1px solid rgba(14, 84, 194, 0.25);
+    color: var(--azul-medio);
+}
+
+.proyecto-tag {
+    background: rgba(37, 99, 235, 0.08);
+    border-color: rgba(14, 84, 194, 0.25);
+}
+
+/* ==================== CALENDARIO DE EVENTOS ==================== */
+.cal-eventos {
+    color: #ffffff;
+}
+
+.evento-info p,
+.eventos-grid .cargando-txt,
+.eventos-grid .lista-vacia {
+    color: #5b6b84;
+}
+
+/* ==================== FOOTER CLARO ==================== */
+footer {
+    box-shadow: 0 -6px 30px rgba(10, 61, 145, 0.1);
+    border-top: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.footer-content p {
+    color: #334155;
+}
+
+.footer-socials a {
+    color: #1e3a8a;
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+.footer-socials a:hover {
+    background: var(--gradiente-neon);
+    color: #ffffff;
+    box-shadow: 0 0 18px rgba(13, 148, 136, 0.4);
+}
+
+.copyright-bar {
+    background: #0b1220;
+    border-top: none;
+    box-shadow: none;
+}
+
+.copyright-bar p {
+    color: #94a3b8;
+}

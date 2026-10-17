@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agenda | InstituciÃ³n Educativa San FÃ©lix</title>
+    <link rel="stylesheet" href="../css/style.css?v=3">
+    <link rel="stylesheet" href="../css/agenda.css?v=5">
+    <!--font-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" href="../Img/f2c2af08-c170-47f2-a55f-2767abb5ea0b.png">
+
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body>
+
+    <!--==================== ENCABEZADO ====================-->
+
+    <header>
+
+        <div class="top-bar">
+
+            <div class="contacto">
+
+                <span>
+                    <i class="fa-solid fa-phone"></i>
+                    324 434 61 91
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-envelope"></i>
+                    iesanfelixaldia@gmail.com
+                </span>
+
+            </div>
+
+            <div class="redes">
+
+                <a href="https://www.facebook.com/share/1BzNG8ZxmF/" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="https://instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="https://www.youtube.com/@INSTITUCIONEDUCATIVASANFELIX" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="header-principal">
+
+            <div class="logo">
+
+                <a href="index.html">
+                    <img src="../Img/f2c2af08-c170-47f2-a55f-2767abb5ea0b.png" alt="I.E SAN FÃ‰LIX">
+                </a>
+
+                <div class="texto-logo">
+
+                    <h1>
+                        InstituciÃ³n Educativa
+                        <span>SAN FÃ‰LIX</span>
+                    </h1>
+
+                    <p>Formamos para el futuro</p>
+
+                </div>
+
+            </div>
+
+            <div class="buscador">
+
+                <form>
+
+                    <input type="search" placeholder="Buscar...">
+
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <!-- MenÃº -->
+
+        <nav class="menu">
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        <i class="fa-solid fa-house"></i>
+                        Inicio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="nosotros.html">
+                        Nuestro Colegio
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="academico.html">
+                        AcadÃ©mico
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="estudiantes.html">
+                        Estudiantes
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="padres.html">
+                        Padres
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="horarios.html">
+                        <i class="fa-regular fa-clock"></i>
+                        Horarios
+                    </a>
+                </li>
+
+                <li>
+                    <a href="eventos.html">
+                        <i class="fa-regular fa-calendar"></i>
+                        Eventos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="noticias.html">
+                        <i class="fa-regular fa-newspaper"></i>
+                        Noticias
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contacto.html">
+                        <i class="fa-solid fa-phone"></i>
+                        Contacto
+                    </a>
+                </li>
+
+                <li id="navAgenda" class="activo">
+                    <a href="agenda.html" aria-current="page">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        Agenda
+                    </a>
+                </li>
+
+                <li id="navLogin">
+                    <a href="login.html">
+                        <i class="fa-solid fa-user-lock"></i>
+                        Ingresar
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!--==================== CONTENIDO ====================-->
+
+    <main class="pagina agenda-pagina">
+
+        <!-- ==================== BANNER ==================== -->
+
+        <section class="agenda-banner">
+
+            <div class="agenda-banner-icono">
+                <i class="fa-regular fa-calendar-check"></i>
+            </div>
+
+            <h2>Agenda Institucional</h2>
+
+            <p>Reuniones, recordatorios y actividades internas de la instituciÃ³n, en un solo lugar.</p>
+
+            <span class="agenda-banner-tag">
+                <i class="fa-solid fa-user-shield"></i>
+                Solo docentes y administrativos
+            </span>
+
+        </section>
+
+        <!-- ==================== VISTA SEMANAL ==================== -->
+
+        <section class="agenda-semanal">
+
+            <div class="section-header">
+                <span class="section-kicker">Resumen de la semana</span>
+                <h3>Agenda Semanal</h3>
+                <p>Una parte de la agenda, dÃ­a por dÃ­a: consulta de un vistazo todo lo programado para esta semana.</p>
+            </div>
+
+            <div class="agenda-semanal-toolbar">
+
+                <div class="agenda-nav-mes">
+                    <button type="button" class="agenda-btn-ico" id="semanaAnterior" aria-label="Semana anterior">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <h4 id="semanaTitulo">â€”</h4>
+                    <button type="button" class="agenda-btn-ico" id="semanaSiguiente" aria-label="Semana siguiente">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                    <button type="button" class="agenda-btn-hoy" id="semanaActual">Esta semana</button>
+                </div>
+
+            </div>
+
+            <div class="agenda-semanal-grid" id="semanaGrid">
+                <p class="agenda-cargando"><i class="fa-solid fa-spinner fa-spin"></i> Cargando semana...</p>
+            </div>
+
+        </section>
+
+        <!-- ==================== CALENDARIO ==================== -->
+
+        <section class="agenda-contenido">
+
+            <div class="section-header">
+                <span class="section-kicker">OrganizaciÃ³n interna</span>
+                <h3>Calendario de Actividades</h3>
+                <p>Consulta las actividades programadas y mantÃ©n al dÃ­a la agenda del colegio.</p>
+            </div>
+
+            <div class="agenda-toolbar">
+
+                <div class="agenda-nav-mes">
+                    <button type="button" class="agenda-btn-ico" id="agendaMesAnterior" aria-label="Mes anterior">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <h4 id="agendaMesTitulo">â€”</h4>
+                    <button type="button" class="agenda-btn-ico" id="agendaMesSiguiente" aria-label="Mes siguiente">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                    <button type="button" class="agenda-btn-hoy" id="agendaHoy">Hoy</button>
+                </div>
+
+                <div class="agenda-filtros">
+                    <select id="agendaFiltroTipo" aria-label="Filtrar por tipo">
+                        <option value="">Todos los tipos</option>
+                        <option value="evento">Eventos</option>
+                        <option value="reunion">Reuniones</option>
+                        <option value="recordatorio">Recordatorios</option>
+                        <option value="academico">AcadÃ©mico</option>
+                    </select>
+
+                    <button type="button" class="agenda-btn-nueva" id="agendaBtnNueva" hidden>
+                        <i class="fa-solid fa-plus"></i>
+                        Nueva entrada
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="agenda-grid">
+
+                <div class="agenda-calendario">
+                    <div class="agenda-semana">
+                        <span>Lun</span>
+                        <span>Mar</span>
+                        <span>MiÃ©</span>
+                        <span>Jue</span>
+                        <span>Vie</span>
+                        <span>SÃ¡b</span>
+                        <span>Dom</span>
+                    </div>
+                    <div class="agenda-celdas" id="agendaCeldas">
+                        <p class="agenda-cargando"><i class="fa-solid fa-spinner fa-spin"></i> Cargando agenda...</p>
+                    </div>
+                </div>
+
+                <aside class="agenda-panel">
+                    <h4><i class="fa-solid fa-list-ul"></i> <span id="agendaListaTitulo">PrÃ³ximas actividades</span></h4>
+                    <div class="agenda-lista" id="agendaLista">
+                        <p class="agenda-cargando"><i class="fa-solid fa-spinner fa-spin"></i> Cargando...</p>
+                    </div>
+                </aside>
+
+            </div>
+
+            <div class="agenda-leyenda">
+                <span class="leg-evento"><i></i> Evento</span>
+                <span class="leg-reunion"><i></i> ReuniÃ³n</span>
+                <span class="leg-recordatorio"><i></i> Recordatorio</span>
+                <span class="leg-academico"><i></i> AcadÃ©mico</span>
+            </div>
+
+        </section>
+
+        <!-- ==================== MODAL DE FORMULARIO ==================== -->
+
+        <div class="agenda-modal-overlay" id="agendaModal" hidden>
+            <div class="agenda-modal">
+
+                <div class="agenda-modal-cabecera">
+                    <h3>
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <span id="agendaModalTitulo">Nueva entrada</span>
+                    </h3>
+                    <button type="button" class="agenda-modal-cerrar" id="agendaModalCerrar" aria-label="Cerrar">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <form id="agendaForm">
+                    <input type="hidden" id="agendaId">
+
+                    <div class="agenda-error" id="agendaFormError" hidden></div>
+
+                    <div class="agenda-campo">
+                        <label for="agendaTitulo">TÃ­tulo <span class="req">*</span></label>
+                        <input type="text" id="agendaTitulo" maxlength="160" placeholder="Ej: ReuniÃ³n de docentes" required>
+                    </div>
+
+                    <div class="agenda-campo">
+                        <label for="agendaDescripcion">DescripciÃ³n</label>
+                        <textarea id="agendaDescripcion" placeholder="Detalles de la actividad..."></textarea>
+                    </div>
+
+                    <div class="agenda-fila">
+                        <div class="agenda-campo">
+                            <label for="agendaFecha">Fecha <span class="req">*</span></label>
+                            <input type="date" id="agendaFecha" required>
+                        </div>
+                        <div class="agenda-campo">
+                            <label for="agendaTipoCampo">Tipo</label>
+                            <select id="agendaTipoCampo">
+                                <option value="evento">Evento</option>
+                                <option value="reunion">ReuniÃ³n</option>
+                                <option value="recordatorio">Recordatorio</option>
+                                <option value="academico">AcadÃ©mico</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="agenda-fila">
+                        <div class="agenda-campo">
+                            <label for="agendaHoraInicio">Hora de inicio</label>
+                            <input type="time" id="agendaHoraInicio">
+                        </div>
+                        <div class="agenda-campo">
+                            <label for="agendaHoraFin">Hora de fin</label>
+                            <input type="time" id="agendaHoraFin">
+                        </div>
+                    </div>
+
+                    <div class="agenda-campo">
+                        <label for="agendaLugar">Lugar</label>
+                        <input type="text" id="agendaLugar" maxlength="160" placeholder="Ej: Auditorio principal">
+                    </div>
+
+                    <div class="agenda-modal-acciones">
+                        <button type="button" class="agenda-btn-secundario" id="agendaCancelar">Cancelar</button>
+                        <button type="submit" class="agenda-btn-primario" id="agendaGuardar">
+                            <i class="fa-solid fa-check"></i>
+                            Guardar
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="agenda-toast" id="agendaToast">
+            <i class="fa-solid fa-circle-check"></i>
+            <span id="agendaToastMsg">Cambios guardados.</span>
+        </div>
+
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer>
+        <div class="footer-content">
+            <p>"Educar es sembrar hoy para cosechar maÃ±ana."</p>
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/share/1BzNG8ZxmF/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@INSTITUCIONEDUCATIVASANFELIX" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="copyright-bar">
+        <p>&copy; 2026 Todos los derechos reservados. Juan Pablo Quintero.</p>
+    </div>
+
+    <script src="../js/gate.js?v=2"></script>
+    <script src="../js/interactividad.js"></script>
+    <script src="../js/menu-publico.js?v=3"></script>
+    <script src="../js/buscador.js"></script>
+    <script src="../js/auth.js?v=6"></script>
+    <script src="../js/agenda.js?v=3"></script>
+
+</body>
+
+</html>
